@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Classification</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="text-center mb-0">Garbage Classification</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <p class="lead text-center">Upload an image of waste material to classify it into one of 12 categories.</p>
+                        </div>
+                        
+                        <form id="upload-form" enctype="multipart/form-data">
+                            <div class="mb-3 text-center">
+                                <div class="upload-area" id="upload-area">
+                                    <img id="preview-image" class="img-fluid d-none mb-3 mx-auto" style="max-height: 300px;">
+                                    <div id="upload-prompt">
+                                        <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+                                        <p>Drag and drop an image here or click to browse</p>
+                                    </div>
+                                    <input type="file" id="file-input" name="file" accept="image/*" class="d-none">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg" id="submit-btn" disabled>Classify Image</button>
+                            </div>
+                        </form>
+                        
+                        <div id="results" class="mt-4 d-none">
+                            <h4 class="text-center mb-3">Results</h4>
+                            <div class="result-card">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5 class="mb-3">Predicted Class:</h5>
+                                        <div class="prediction-result">
+                                            <h3 id="prediction-class"></h3>
+                                            <div class="confidence-bar-container">
+                                                <div class="confidence-bar" id="confidence-bar"></div>
+                                                <span id="confidence-value"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="mb-3">Top 3 Predictions:</h5>
+                                        <ul class="list-group" id="top-predictions">
+                                            <!-- Will be populated by JavaScript -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
