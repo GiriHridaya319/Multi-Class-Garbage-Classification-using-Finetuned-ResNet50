@@ -190,8 +190,6 @@ This project is licensed under the [MIT License](LICENSE).
 * PyTorch + torchvision
 * Bootstrap for UI
 
-```
-
 
 
 ![image](https://github.com/user-attachments/assets/22e48147-7264-45b4-9968-7c0323bab911)
